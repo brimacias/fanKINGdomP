@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comunidades - fanKINGdom</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="#" alt="fanKINGdom logo" style="width: 40px;">
+                fanKINGdom
+            </a>
+            <button class="navbar-toogler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item" href="#">Chat</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h4>Filtros</h4>
+                    <form>
+                        <div class="form-group">
+                            <label for="filterCommunity">Comunidades</label>
+                            <select class="form-control" id="filterCommunity">
+                                <option>Harry Potter</option>
+                                <option>Stranger Things</option>
+                                <option>Percy Jackson</option>
+                                <option>Velvet</option>
+                                <option>Otros...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterType">Tipo</label>
+                            <select class="form-control" id="filterType">
+                                <option>Fanfic</option>
+                                <option>Fanart</option>
+                                <option>Fanvid</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterCategory">Trabajos basados en </label>
+                            <select class="form-control" id="filterCategory">
+                                <option>Libros</option>
+                                <option>Series</option>
+                                <option>Películas</option>
+                                <option>Musicales</option>
+                                <option>Otros...</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Aplicar Filtros</button>
+                    </form>
+                    <div class="mt-4">
+                        <h5>¿No encuentras tu comunidad?</h5>
+                        <a href="#" class="btn btn-outline-secondary btn-block">Solicitar Nueva Comunidad</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9">
+                    <h2>Comunidades</h2>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Harry Potter Saga
+                            <span class="badge badge-primary badge-pill">(1200)</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Stranger Things
+                            <span class="badge badge-primary badge-pill">(950)</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Percy Jackson
+                            <span class="badge badge-primary badge-pill">(800)</span>
+                        </li>
+                        <!--MÁS COMUNIDADES-->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Velvet & Velvet Colección
+                            <span class="badge badge-primary badge-pill">(12)</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Fantastic Beasts Saga
+                            <span class="badge badge-primary badge-pill">(2867)</span>
+                        </li>
+                    </ul>
+
+                    <nav aria-label="Pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="mt-5">
+                        <h3>Stranger Things</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item">Trabajo1 - Última modificación: 29/10/2024</li>
+                            <li class="list-group-item">Trabajo2 - Última modificación: 27/10/2024</li>
+                            <li class="list-group-item">Trabajo3 - Última modificación: 22/10/2024</li>
+                        </ul>
+                        <div class="mt-4">
+                            <h4>Filtros de la comunidad</h4>
+                            <form>
+                                <div class="form-group">
+                                    <label for="standardTags">Etiquetas Estándar</label>
+                                    <select>
+                                        <option>Angst</option>
+                                        <option>Fluff</option>
+                                        <option>Hurt/Comfort</option>
+                                        <option>Emotional Hurt/Comfort</option>
+                                        <option>Romance</option>
+                                        <option>Universo alternativo - Diferencias con el canon</option>
+                                        <option>Grief/Morning</option>
+                                        <option>Post-Canon</option>
+                                        <option>One Shot</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="warnings">Warnings</label>
+                                    <select>
+                                        <option>El creador ha decidido no usar etiquetas Warning</option>
+                                        <option>Sin necesidad de etiquetas Warning</option>
+                                        <option>Descripciones gráficas de violencia</option>
+                                        <option>Muerte de personaje(s) principal(es) </option>
+                                        <option>+18</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="popularRelations">Relaciones Populares</label>
+                                    <select multiple class="form-control" id="popularRelations">
+                                        <option>Joyce Byers/James "Chief" Hopper</option>
+                                        <option>Will Byers/Mike Wheeler</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="customTags">Etiquetas Personalizadas</label>
+                                    <select multiple class="form-control" id="customTags">
+                                        
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="wordCount">Cantidad de Palabras</label>
+                                    <input type="number" class="form-control" id="wordCount" placeholder="Ej. 1000">
+                                </div>
+    
+                                <h5>Filtros de Exclusión</h5>
+                                <div class="form-group">
+                                    <input type="checkbox" id="excludeTags">
+                                    <label for="excludeTags">Excluir etiquetas seleccionadas</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
