@@ -20,9 +20,6 @@ mensajes text,
 suscripciones text
 );
 
--- describe usuarios;
-
-
 
 create table if not exists Usuario_Comunidad(
 usuarioId int,
@@ -60,8 +57,8 @@ create table if not exists Fanfic_Comunidad (
 fanficId int,
 comunidadId int,
 primary key (fanficId, comunidadId),
-foreign key (fanficId) references FanFics(fanficId),
-foreign key (comunidadId) references Comunidades(comunidadId)
+foreign key (fanficId) references fanfics(fanficId),
+foreign key (comunidadId) references comunidades(comunidadId)
 );
 
 
@@ -88,8 +85,8 @@ create table if not exists Fanart_Comunidad (
 fanartId int,
 comunidadId int,
 primary key (fanartId, comunidadId),
-foreign key (fanartId) references FanArts(fanartId),
-foreign key (comunidadId) references Comunidades(comunidadId)
+foreign key (fanartId) references fanarts(fanartId),
+foreign key (comunidadId) references comunidades(comunidadId)
 );
 
 
@@ -111,12 +108,12 @@ foreign key (autorId) references usuarios(usuarioId) on update
 cascade on delete cascade
 );
 
-create table if not exists Fanvid_Comunidad (
+create table if not exists Fanvid_Comunidad(
 fanvidId int,
 comunidadId int,
-primary key (fanvidId, comunidadId),
-foreign key (fanvidId) references FanVids(fanvidId),
-foreign key (comunidadId) references Comunidades(comunidadId)
+primary key(fanvidId, comunidadId),
+foreign key (fanvidId) references fanvids(fanvidId),
+foreign key (comunidadId) references comunidades(comunidadId)
 );
 
 
@@ -164,7 +161,7 @@ create table if not exists suscripciones (
 );
 
 -- Para obtener la información de las suscripciones de un usuario
-
+/*
 select s.suscripcionId, 
        s.fechaSuscripcion,
        coalesce(f.nombreUsuario, fa.nombreUsuario, fv.nombreUsuario) as nombreUsuario,
@@ -174,4 +171,4 @@ from suscripciones s
 	left join fanarts fa on s.trabajoId = fa.fanartId and s.tipoTrabajo = 'fanart'
 	left join fanvids fv on s.trabajoId = fv.fanvidId and s.tipoTrabajo = 'fanvid'
 where s.usuarioId = 1;
-
+*/
