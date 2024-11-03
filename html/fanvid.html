@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanvids - FanKINGdom</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .filter-sidebar {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .fanvid-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2>Fanvids</h2>
+        <p>Explora todos los videos de fans compartidos en esta sección.</p>
+
+        <div class="row">
+            
+            <div class="col-md-3">
+                <div class="filter-sidebar">
+                    <h5>Filtrar por</h5>
+                    <form>
+                        <div class="form-group">
+                            <label>Etiquetas Standard</label>
+                            <input type="text" class="form-control" placeholder="Buscar etiqueta...">
+                        </div>
+                        <div class="form-group">
+                            <label>Warnings</label>
+                            <input type="text" class="form-control" placeholder="Buscar warnings...">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Aplicar Filtros</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="col-md-9">
+                <div class="fanvid-item">
+                    <h4>Título del Fanvid1</h4>
+                    <p>Descripción breve del fanvid aquí. <a href="#">Ver Fanvid</a></p>
+                    <small>Categoría: <span>Fanvid</span>, Duración: <span>3:45 min</span></small>
+                </div>
+                <div class="fanvid-item">
+                    <h4>Título del Fanvid2</h4>
+                    <p>Descripción breve del fanvid aquí. <a href="#">Ver Fanvid</a></p>
+                    <small>Categoría: <span>Fanvid</span>, Duración: <span>4:30 min</span></small>
+                </div>
+                
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
