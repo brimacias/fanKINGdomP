@@ -8,16 +8,15 @@ use FANKINGDOM;
 create table if not exists usuarios (
 usuarioId int auto_increment primary key,
 nombreUsuario varchar(50) not null,
-correoElectronico varchar(50) not null,
+correoElectronico varchar(100) not null,
 contrasenya varchar(20) not null,
-fechaCreacionPerfil date not null,
+fechaCreacionPerfil datetime default current_timestamp,
 fotoPerfil LONGBLOB,
 textoPresentacion text,
 fechaNacimiento date,
 lugarNacimiento varchar(50),
 lugarResidencia varchar(50),
-mensajes text,
-suscripciones text
+rol enum('usuario','moderador','administrador') default 'usuario',
 );
 
 
@@ -30,103 +29,25 @@ foreign key (comunidadId) references Comunidades(comunidadId)
 );
 
 
--- 1. Tabla fanfics
-create table if not exists fanfics(
-fanficId int auto_increment primary key,
-autorId int not null,
-nombreUsuario varchar(50) not null,
-categoriaGeneral varchar (100) not null,
-categoriaTema varchar(255),
-fechaPublicacion date not null,
-fechaModificacion date not null,
-texto text not null,
-totalPalabras int not null,
-totalCapitulos int not null,
-idioma varchar(20),
-etiquetasStandard text,
-etiquetasPersonalizadas text,
-votos int not null,
-suscripciones int not null,
-comentarios text,
-sinopsis text,
-foreign key (autorId) references usuarios(usuarioId) on update
-cascade on delete cascade
+create table publicaciones (
+    publicacionId int auto_increment primary key,
+    titulo varchar(200) not null,
+    contenido text not null,
+    tipo enum('fanfic', 'fanart', 'fanvid') not null,
+    etiquetas varchar(255),
+    usuario_id int,
+    comunidad_id int,
+    fecha_creacion datetime default current_timestamp,
+    foreign key (usuarioId) references usuarios(usuarioId),
+    foreign key (comunidadId) references comunidades(comunidadId)
 );
-
-create table if not exists Fanfic_Comunidad (
-fanficId int,
-comunidadId int,
-primary key (fanficId, comunidadId),
-foreign key (fanficId) references fanfics(fanficId),
-foreign key (comunidadId) references comunidades(comunidadId)
-);
-
-
--- 2. Tabla fanarts
-create table if not exists fanarts(
-fanartId int auto_increment primary key,
-autorId int not null,
-nombreUsuario varchar(50) not null,
-nombreFanart varchar(100) not null,
-tecnicaFanart varchar(100),
-categoriaGeneral varchar(100) not null,
-fechaPublicacion date not null,
-etiquetasStandard text,
-etiquetasPersonalizadas text,
-temaFanart varchar(50) not null,
-votos int not null,
-suscripciones int default 0,
-comentarios text,
-foreign key (autorId) references usuarios(usuarioId) on update
-cascade on delete cascade
-);
-
-create table if not exists Fanart_Comunidad (
-fanartId int,
-comunidadId int,
-primary key (fanartId, comunidadId),
-foreign key (fanartId) references fanarts(fanartId),
-foreign key (comunidadId) references comunidades(comunidadId)
-);
-
-
--- 3. Tabla fanvids
-create table if not exists fanvids(
-fanvidId int auto_increment primary key,
-autorId int not null,
-nombreUsuario varchar(50) not null,
-categoriaGeneral varchar(100) not null,
-duracionVid time not null,
-fechaPublicacion date not null,
-etiquetasStandard text,
-etiquetasPersonalizadas text,
-temaFanvid varchar(255),
-votos int default 0,
-suscripciones int default 0,
-comentarios text,
-foreign key (autorId) references usuarios(usuarioId) on update
-cascade on delete cascade
-);
-
-create table if not exists Fanvid_Comunidad(
-fanvidId int,
-comunidadId int,
-primary key(fanvidId, comunidadId),
-foreign key (fanvidId) references fanvids(fanvidId),
-foreign key (comunidadId) references comunidades(comunidadId)
-);
-
 
 -- 4. Tabla comunidades
 create table if not exists comunidades(
 comunidadId int auto_increment primary key,
-nombreComunidad varchar(255) not null,
-categoriaGeneral text,
-etiquetasStandard text,
-relacionesPopulares text,
-etiquetasPersonalizadas text,
-miembrosComunidad int default 0,
-trabajosComunidad int default 0
+nombreComunidad varchar(255) unique not null,
+descripcion text,
+foreign key (moderador_id) references usuarios(id)
 );
 
 -- 5. Tabla categorias generales
@@ -141,14 +62,14 @@ cantidadTrabajos int default 0
 
 
 -- 6. Tabla mensajes
-create table if not exists mensajes (
-mensajeId int auto_increment primary key,
-remitenteId int,
-destinatarioId int,
-textoMensaje text not null,
-fechaEnvio timestamp default current_timestamp,
-foreign key (remitenteId) references usuarios(usuarioId),
-foreign key (destinatarioId) references usuarios(usuarioId)
+create table if not exists comentarios(
+    id int auto_increment primary key,
+    contenido text not null,
+    usuario_id int,
+    publicacion_id int,
+    fecha_creacion datetime default current_timestamp,
+    foreign key (usuarioId) references usuarios(usuarioId),
+    foreign key (publicacionId) references publicaciones(publicacionId)
 );
 
 create table if not exists suscripciones (
