@@ -5,10 +5,10 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
 
     public boolean registrar(Usuario usuario) {
-        if (usuarioRepository.findByEmail(usuario.getEmail()) != null) {
+        if (usuarioRepository.findByCorreoElectronico(usuario.getCorreoElectronico()) != null) {
             return false; // Email ya en uso
         }
-        usuario.setContraseña(new BCryptPasswordEncoder().encode(usuario.getContraseña())); // Encriptar contraseña
+        usuario.setContrasenya(new BCryptPasswordEncoder().encode(usuario.getContrasenya())); // Encriptar contraseña
         usuarioRepository.save(usuario);
         return true;
     }
