@@ -5,5 +5,5 @@ import main.java.com.example.demo.usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-    Usuario findByNombreUsuario(String nombreUsuario);
+    Usuario findByCorreoElectronico(String CorreoElectronico);
 }
