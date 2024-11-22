@@ -13,7 +13,6 @@ public class Usuario {
     private String correoElectronico;
     private String contrasenya;
     private String fechaCreacionPerfil;
-    private String categoriasGenerales;
     private String textoPresentacion;
     private String fechaNacimiento;
 
@@ -56,14 +55,6 @@ public class Usuario {
 
     public void setFechaCreacionPerfil(String fechaCreacionPerfil) {
         this.fechaCreacionPerfil = fechaCreacionPerfil;
-    }
-
-    public String getCategoriasGenerales() {
-        return categoriasGenerales;
-    }
-
-    public void setCategoriasGenerales(String categoriasGenerales) {
-        this.categoriasGenerales = categoriasGenerales;
     }
 
     public String getTextoPresentacion() {
