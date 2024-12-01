@@ -42,7 +42,7 @@ INSERT INTO Usuario_Comunidad (usuarioId, comunidadId) VALUES (1, 1), (1, 2);
 
 INSERT INTO Usuario_Comunidad (usuarioId, comunidadId) VALUES (1, 4), (1, 3);
 */
-select * from comunidades /*where categoriaGeneral = 'Basado en una serie de televisión'*/;
+
 
 -- Registros categorías generales
 /*
@@ -65,10 +65,12 @@ insert into categoriasgenerales (nombreCategoria)
 value ('Basado en un musical');
 */
 
+
 -- Consultas a tablas
--- select * from comunidades;
+
+select * from comunidades /*where categoriaGeneral = 'Basado en una serie de televisión'*/;
  
--- select * from categoriasgenerales;
+describe categoriasgenerales;
 
  
 -- Borrados de registros erróneos

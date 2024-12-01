@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfil</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            .profile-avatar {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .profile-info {
+                background-color: #f8f9fa;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            .user-works, .user-activity {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+            .user-works ul, .user-activity ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .user-works ul li, .user-activity ul li {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app" class="container mt-5">
+            <header class="text-center">
+                <h1>Perfil de {{ userProfile.username }}</h1>
+            </header>
+            <section class="profile-info text-center mt-4">
+                <img :src="userProfile.avatarUrl" alt="Avatar de usuario" class="profile-avatar mb-3">
+                <h2>{{ userProfile.username }}</h2>
+                <p>{{ userProfile.bio }}</p>
+                <p>Miembro desde <strong>{{ userProfile.joinDate }}</strong></p>
+                <p>Trabajos publicados: <strong>{{ userProfile.worksCount }}</strong></p>
+            </section>
+
+            <section class="user-works mt-4">
+                <h3>Trabajos publicados</h3>
+                <ul>
+                    <li v-for="work in userWorks" :key="work.id" class="d-flex justify-content-between align-items-center">
+                        <a :href="'/work' + work.id">{{ work.title }}</a>
+                        <small class="text-muted">Publicado el: {{ work.publishedDate }}</small>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="user-activity mt-4">
+                <h3>Actividad Reciente</h3>
+                <ul>
+                    <li v-for="activity in recentActivity" :key="activity.id">
+                        <p>{{ activity.description }}</p>
+                        <small class="text-muted">{{ activity.date }}</small>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data(){
+                return{
+                    userProfile: {},
+                    userWorks: [],
+                    recentActivity: []
+                };
+            },
+            created() {
+                this.fetchUserProfile();
+                this.fetchUserWorks();
+                this.fetchRecentActivity();
+            },
+            methods: {
+                fetchUserProfile() {
+                    axios.get('/api/user/profile')
+                        .then(response => {
+                            this.userProfile = response.data
+                        });
+                },
+                fetchUserWorks() {
+                    axios.get('/api/user/works')
+                        .then(response => {
+                            this.userWorks = response.data
+                        });
+                },
+                fetchRecentActivity() {
+                    axios.get('/api/user/activity')
+                        .then(response => {
+                            this.recentActivity = response.data
+                        });
+                }
+            }
+        });
+    </script>
+    </body>
+</html>

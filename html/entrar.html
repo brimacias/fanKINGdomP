@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fanKingdom</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" aria-label="Inicio">
+            <img src="" alt="fanKINGdom logo" style="width: 40px;">
+            fanKINGdom
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank" aria-label="Entrar">Entrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank" aria-label="Abrir chat">Chat</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Abrir menú de usuario">
+                        ¡Hola, <span id="nombreUsuarioSaludo">nombreUsuario</span>!
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#" target="_blank">Perfil</a>
+                        <a class="dropdown-item" href="#" target="_blank">Suscripciones</a>
+                        <a class="dropdown-item" href="#" target="_blank">Mensajes</a>
+                        <a class="dropdown-item" href="#" target="_blank">Trabajos propios</a>
+                        <a class="dropdown-item" href="#" target="_blank">Historial</a>
+                    </div>
+                </li>                    
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h2>Registro</h2>   
+        <form id="registroForm" action="/api/usuarios/registro" method="POST">
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required>
+            </div>
+            <div class="form-group">
+                <label for="correoElectronico">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasenya">Contraseña</label>
+                <input type="password" class="form-control" id="contrasenya" name="contrasenya" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>        
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("registroForm").addEventListener("submit", async (e) => {
+                e.preventDefault();
+                
+                const datos = {
+                    nombreUsuario: document.getElementById("nombreUsuario").value.trim(),
+                    correoElectronico: document.getElementById("correoElectronico").value.trim(),
+                    contrasenya: document.getElementById("contrasenya").value.trim()
+                };
+                
+                if (datos.contrasenya.length < 6) {
+                    alert("La contraseña debe tener al menos 6 caracteres.");
+                    return;
+                }
+
+                try {
+                    const respuesta = await fetch("http://localhost:3000/api/usuarios/registro", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(datos)
+                    });
+
+                    if (respuesta.ok) {
+                        alert("Usuario registrado con éxito.");
+                    } else {
+                        alert("Error en el registro.");
+                    }
+                } catch (error) {
+                    console.error("Error al realizar el registro:", error);
+                    alert("Ocurrió un problema al registrarse.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

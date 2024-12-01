@@ -1,0 +1,48 @@
+:root {
+    --color-principal: #FFC107; /* Ámbar */
+    --color-texto: #000000; /* Negro */
+    --color-secundario: #FDD835; /* Amarillo */
+    --color-fondo: #FFFFFF; /* Blanco */
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: var(--color-principal);
+}
+
+.navbar-brand span {
+    color: var(--color-secundario); /* Amarillo */
+}
+
+.navbar .nav-link {
+    color: var(--color-secundario); /* Amarillo */
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--color-texto); /* Negro al pasar el cursor */
+}
+
+.card {
+    border: 1px solid var(--color-secundario);
+}
+
+.card-title {
+    color: var(--color-principal);
+}
+
+.btn-primary {
+    background-color: var(--color-secundario);
+    border: none;
+    color: var(--color-texto);
+}
+
+footer {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+}

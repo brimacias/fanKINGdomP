@@ -4,127 +4,120 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>fanKingdom</title>
+        <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="" alt="fanKINGdom logo" style="width: 40px;">
-                fanKINGdom
-            </a>
-            <button class="navbar-toogler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toogler-icon"></span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: var(--color-principal);">
+        <a class="navbar-brand" href="#">
+            <img src="./img/coronaI.png" alt="fanKINGdom logo" style="width: 100px;">
+            <span style="color: var(--color-texto);">fanKINGdom</span>
+        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">Registrarse</a>
+                        <a class="nav-link" href="entrar.html" target="_blank">Entrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" target="_blank">Chat</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ¡Hola, nombreUsuario!
+                            ¡Hola<!--,<span id="nombreUsuarioSaludo">nombreUsuario</span>-->!
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#" target="_blank">Perfil</a>
-                            <a class="dropdown-item" href="#" target="_blank">Suscripciones</a>
+                            <a class="dropdown-item" href="perfil.html" target="_blank">Perfil</a>
+                            <a class="dropdown-item" href="suscripciones.html" target="_blank">Suscripciones</a>
                             <a class="dropdown-item" href="#" target="_blank">Mensajes</a>
-                            <a class="dropdown-item" href="#" target="_blank">Trabajos propios</a>
-                            <a class="dropdown-item" href="#" target="_blank">Historial</a>
-                            <a class="dropdown-item" href="#" target="_blank">Noticias</a>
-                            <a class="dropdown-item" href="#" target="_blank">Chats</a>
+                            <a class="dropdown-item" href="trabajosPropios.html" target="_blank">Trabajos propios</a>
                         </div>
                     </li>                    
                 </ul>
             </div>
         </nav>
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col text-center">
-                    <h2>Categorías Generales</h2>
-                    <p><a href="fanfic.html" target="_blank">Fanfic</a> | <a href="fanart.html" target="_blank">Fanart</a> | <a href="fanvid.html" target="_blank">Fanvid</a> | <a href="#">Comunidades Más Visitadas</a></p>
-                </div>
-            </div>
-        </div>
-
         <div class="container mt-5">
             <div class="row">
-                <div class="col-lg-3">
-                <h3>Noticias Recientes</h3>
-                <ul class="list-group">
-                    <li class="list-group-item">Noticia1</li>
-                    <li class="list-group-item">Noticia2</li>
-                    <li class="list-group-item">Noticia3</li>
-                </ul>
-            </div>
-
-            <div class="col-lg-9">
-                <h2>Explora Trabajos Populares</h2>
-                <div class="card-deck">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">NombreFanfic</h5>
-                            <p class="card-text">Una breve descripción del fanfic aquí.</p>
-                            <a href="#" class="btn btn-primary">Leer más</a>
+                <div class="col-lg-12">
+                    <h2>Explora diferentes tipos de trabajos</h2>
+                    <br>
+                    <div class="card-deck">
+                        <!-- Fanfic -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Fanfic</h5>
+                                <p class="card-text">Historias creadas por fanáticos utilizando los personajes, tramas y universos ya establecidos en obras originales.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="fanfic.html" target="_blank" class="btn btn-primary">Ver más</a>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Publicado hace 3 días</small>
+                        <!-- Fanart -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Fanart</h5>
+                                <p class="card-text">Obras de arte que están basadas en personajes, épocas, vestuarios u otros que el artista toma de universos previamente creados por un tercero.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="fanart.html" target="_blank" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <!-- Fanvid -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Fanvid</h5>
+                                <p class="card-text">Videos hechos y editados por fans, usando clips de series y películas, combinados con canciones y música.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="fanvid.html" target="_blank" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Comunidades</h5>
+                                <p class="card-text">Grupos de trabajos que están basados en universos previamente creados.</p>
+                                
+                            </div>
+                            <div class="card-footer">
+                                <a href="comunidades.html" target="_blank" class="btn btn-primary">Ver más</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">NombreFanart</h5>
-                            <p class="card-text">Una breve descripción del fanart aquí</p>
-                            <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Publicado hace 5 días</small>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">NombreFanvid</h5>
-                            <p class="card-text">Una breve descripción del fanvid aquí.</p>
-                            <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Publicado hace 7 días</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-4 text-center">
-                    <h4>Trabajos Publicados</h4>
-                    <p>+10,000</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <h4>Usuarios Registrados</h4>
-                    <p>5,000</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <h4>Visitas Diarias</h4>
-                    <p>+20,000</p>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <div class="col text-center">
-                    <h4>Síguenos en</h4>
-                    <a href="#" class="btn btn-social-icon btn-instagram mr-2">Instagram</a>
-                    <a href="#" class="btn btn-social-icon btn-twitter mr-2">Twitter</a>
-                    <a href="#" class="btn btn-social-icon btn-tumblr">Tumblr</a>
                 </div>
             </div>
         </div>
-        
-        <footer class="bg-dark text-light text-center py-3 mt-5">
+            
+        <div class="row mt-5">
+            <div class="col-lg-4 text-center">
+                <h4>Trabajos Publicados</h4>
+                <p>+10,000</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h4>Usuarios Registrados</h4>
+                <p>5,000</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h4>Visitas Diarias</h4>
+                 <p>+20,000</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <h4 style="color: var(--color-secundario);">Síguenos en</h4>
+                <a href="https://www.instagram.com/brinadevries/" class="btn btn-social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/BrinaPadilha" class="btn btn-social-icon" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.tumblr.com/blog/el-gato-nintendero" class="btn btn-social-icon" target="_blank">
+                    <i class="fab fa-tumblr"></i>
+                </a>
+            </div>
+        </div>
+        <footer class="text-center py-3 mt-5" style="background-color: var(--color-secundario); color: var(--color-fondo);">
             <p>&copy; 2024 fanKINGdom. Todos los derechos reservados.</p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
