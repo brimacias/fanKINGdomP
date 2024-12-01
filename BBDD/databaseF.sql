@@ -16,7 +16,11 @@ textoPresentacion text,
 fechaNacimiento date,
 lugarNacimiento varchar(50),
 lugarResidencia varchar(50),
+<<<<<<< HEAD
 rol enum('usuario','moderador','administrador') default 'usuario'
+=======
+rol enum('usuario','moderador','administrador') default 'usuario',
+>>>>>>> 341d8434627abc89133459e41758feb58c2a48cb
 );
 
 create table if not exists moderadores (
@@ -44,7 +48,11 @@ foreign key (comunidadId) references Comunidades(comunidadId)
 );
 
 
+<<<<<<< HEAD
 create table if not exists publicaciones (
+=======
+create table publicaciones (
+>>>>>>> 341d8434627abc89133459e41758feb58c2a48cb
     publicacionId int auto_increment primary key,
     titulo varchar(200) not null,
     contenido text not null,
