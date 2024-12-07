@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fanvids - FanKINGdom</title>
+    <title>Fanvids</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .filter-sidebar {
@@ -18,36 +19,31 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="main.html">
-            <img src="./img/logoFKD.jpg" alt="fanKINGdom logo" style="width: 150px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: var(--color-principal);">
+        <a class="navbar-brand" href="./main.html">
+            <img src="./img/coronaI.png" alt="fanKINGdom logo" style="width: 100px;">
+            <span style="color: var(--color-texto);">fanKINGdom</span>
         </a>
-        <button class="navbar-toogler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toogler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank">Entrar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank">Registrarse</a>
+                    <a class="nav-link" href="entrar.html" target="_blank">Entrar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" target="_blank">Chat</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ¡Hola, nombreUsuario!
+                        ¡Hola<!--,<span id="nombreUsuarioSaludo">nombreUsuario</span>-->!
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#" target="_blank">Perfil</a>
-                        <a class="dropdown-item" href="#" target="_blank">Suscripciones</a>
+                        <a class="dropdown-item" href="perfil.html" target="_blank">Perfil</a>
+                        <a class="dropdown-item" href="suscripciones.html" target="_blank">Suscripciones</a>
                         <a class="dropdown-item" href="#" target="_blank">Mensajes</a>
-                        <a class="dropdown-item" href="#" target="_blank">Trabajos propios</a>
-                        <a class="dropdown-item" href="#" target="_blank">Historial</a>
-                        <a class="dropdown-item" href="#" target="_blank">Noticias</a>
-                        <a class="dropdown-item" href="#" target="_blank">Chats</a>
+                        <a class="dropdown-item" href="trabajosPropios.html" target="_blank">Trabajos propios</a>
                     </div>
                 </li>                    
             </ul>
@@ -71,11 +67,10 @@
                             <label>Warnings</label>
                             <input type="text" class="form-control" placeholder="Buscar warnings...">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Aplicar Filtros</button>
+                        <button type="submit" class="btn btn-primary btn-block" style="background-color: var(--color-principal); border: none;">Aplicar Filtros</button>
                     </form>
                 </div>
             </div>
-
 
             <div class="col-md-9">
                 <div class="fanvid-item">
@@ -88,8 +83,6 @@
                     <p>Descripción breve del fanvid aquí. <a href="#">Ver Fanvid</a></p>
                     <small>Categoría: <span>Fanvid</span>, Duración: <span>4:30 min</span></small>
                 </div>
-                
-
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">

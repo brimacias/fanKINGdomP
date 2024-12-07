@@ -3,27 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Comunidades - fanKINGdom</title>
+        <title>Comunidades</title>
+        <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-<<<<<<< HEAD
-                <img src="./img/logoFKD.jpg" alt="fanKINGdom logo" style="width: 150px;">
-=======
-                <img src="logo.png" alt="fanKINGdom logo" style="width: 40px;">
-                fanKINGdom
->>>>>>> 341d8434627abc89133459e41758feb58c2a48cb
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: var(--color-principal);">
+            <a class="navbar-brand" href="./main.html">
+                <img src="./img/coronaI.png" alt="fanKINGdom logo" style="width: 100px;">
+                <span style="color: var(--color-texto);">fanKINGdom</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Entrar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Registrarse</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Chat</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="entrar.html" target="_blank">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_blank">Chat</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ¡Hola<!--,<span id="nombreUsuarioSaludo">nombreUsuario</span>-->!
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="perfil.html" target="_blank">Perfil</a>
+                            <a class="dropdown-item" href="suscripciones.html" target="_blank">Suscripciones</a>
+                            <a class="dropdown-item" href="#" target="_blank">Mensajes</a>
+                            <a class="dropdown-item" href="trabajosPropios.html" target="_blank">Trabajos propios</a>
+                        </div>
+                    </li>                    
                 </ul>
             </div>
         </nav>
@@ -61,8 +72,7 @@
                                 <option>Otros...</option>
                             </select>
                         </div>
-
-                        <button type="submit" class="btn btn-primary btn-block mt-3">Aplicar Filtros</button>
+                        <button type="submit" class="btn btn-primary btn-block mt-3" style="background-color: var(--color-principal); border: none;">Aplicar Filtros</button>
                     </form>
                     <div class="mt-4">
                         <h5>¿No encuentras tu comunidad?</h5>
@@ -75,24 +85,24 @@
                     <ul class="list-group mb-4">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Harry Potter Saga
-                            <span class="badge badge-primary badge-pill">(1200)</span>
+                            <span class="badge badge-primary badge-pill" style="background-color: var(--color-secundario); border: none;">(1200)</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Stranger Things
-                            <span class="badge badge-primary badge-pill">(950)</span>
+                            <span class="badge badge-primary badge-pill" style="background-color: var(--color-secundario); border: none;">(950)</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Percy Jackson
-                            <span class="badge badge-primary badge-pill">(800)</span>
+                            <span class="badge badge-primary badge-pill" style="background-color: var(--color-secundario); border: none;">(800)</span>
                         </li>
                         <!--MÁS COMUNIDADES-->
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Velvet & Velvet Colección
-                            <span class="badge badge-primary badge-pill">(12)</span>
+                            <span class="badge badge-primary badge-pill" style="background-color: var(--color-secundario); border: none;">(12)</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Fantastic Beasts Saga
-                            <span class="badge badge-primary badge-pill">(2867)</span>
+                            <span class="badge badge-primary badge-pill" style="background-color: var(--color-secundario); border: none;">(2867)</span>
                         </li>
                     </ul>
 
