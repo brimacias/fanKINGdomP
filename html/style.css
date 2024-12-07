@@ -8,8 +8,12 @@
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
+<<<<<<< HEAD
     font-family: Arial, sans-serif;
     text-align: justify;
+=======
+    font-family: "font-family: 'Times New Roman', serif;"; 
+>>>>>>> 243cb1a1a891f0001cb3606889eda8938c6ce756
 }
 
 .navbar {
