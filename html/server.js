@@ -1,63 +1,51 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mysql = require("mysql2");
-const bcrypt = require("bcrypt");
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql2');
 
 const app = express();
-const PORT = 3000;
 
-// Configurar middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// Configurar middleware de CORS
+app.use(cors());
+
+// Middleware para parsear JSON
+app.use(express.json());
+
 
 // Configurar la conexión a la base de datos
-const db = mysql.createConnection({
+const conexion  = mysql.createConnection({
     host: "localhost",
-    user: "root", // Cambia esto si tienes otro usuario
-    password: "pipastijuana", // Añade tu contraseña si tienes una
+    user: "root",
+    password: "pipastijuana",
     database: "fanKingdom"
 });
 
 // Conectar a la base de datos
-db.connect((err) => {
-    if (err) {
-        console.error("Error al conectar a la base de datos:", err);
-        process.exit(1);
+conexion.connect((error) => {
+    if (error) {
+        console.error('Error al conectar a la base de datos:', error);
+    } else {
+        console.log('Conectado a la base de datos');
     }
-    console.log("Conexión a la base de datos establecida.");
 });
 
+
 // Ruta para registrar un usuario
-app.post("/api/usuarios/registro", async (req, res) => {
+app.post("/Desktop/fanKINGdomP/html", async (req, res) => {
     const { nombreUsuario, correoElectronico, contrasenya } = req.body;
+    const sql = 'INSERT INTO usuarios (nombre, email, contrasenya) VALUES (?, ?, ?)';
 
-    // Validar los datos
-    if (!nombreUsuario || !correoElectronico || !contrasenya) {
-        return res.status(400).send("Todos los campos son obligatorios.");
-    }
-
-    try {
-        // Encriptar la contraseña
-        const hashedPassword = await bcrypt.hash(contrasenya, 10);
-
-        // Insertar el usuario en la base de datos
-        const sql = "INSERT INTO usuarios (nombreUsuario, correoElectronico, contrasenya) VALUES (?, ?, ?)";
-        db.query(sql, [nombreUsuario, correoElectronico, hashedPassword], (err, result) => {
-            if (err) {
-                if (err.code === "ER_DUP_ENTRY") {
-                    return res.status(400).send("El correo electrónico ya está registrado.");
-                }
-                return res.status(500).send("Error al registrar el usuario.");
-            }
-            res.status(200).send("Usuario registrado con éxito.");
-        });
-    } catch (error) {
-        console.error("Error al procesar el registro:", error);
-        res.status(500).send("Ocurrió un error al registrar el usuario.");
-    }
+    conexion.query(sql, [nombreUsuario, correoElectronico, contrasenya], (error, resultados) => {
+        if (error) {
+            console.error('Error al registrar el usuario:', error);
+            res.status(500).send('Error al registrar el usuario');
+        } else {
+            res.status(201).send('Usuario registrado exitosamente');
+        }
+    });
 });
 
 // Iniciar el servidor
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+app.listen(3000, () => {
+    console.log(`Servidor corriendo en http://localhost:${3000}`);
 });
+

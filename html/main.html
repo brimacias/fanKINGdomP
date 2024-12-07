@@ -49,7 +49,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Fanfic</h5>
-                                <p class="card-text">Historias creadas por fanáticos utilizando los personajes, tramas y universos ya establecidos en obras originales.</p>
+                                <p class="card-text" style="text-align:justify">Historias creadas por fanáticos utilizando los personajes, tramas y universos ya establecidos en obras originales.</p>
                             </div>
                             <div class="card-footer">
                                 <a href="fanart.html" target="_blank" class="btn btn-primary" style="background-color: var(--color-principal); border: none;">Ver más</a>
@@ -59,7 +59,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Fanart</h5>
-                                <p class="card-text">Obras de arte que están basadas en personajes, épocas, vestuarios u otros que el artista toma de universos previamente creados por un tercero.</p>
+                                <p class="card-text" style="text-align: justify;">Obras de arte que están basadas en personajes, épocas, vestuarios u otros que el artista toma de universos previamente creados por un tercero.</p>
                             </div>
                             <div class="card-footer">
                                 <a href="fanart.html" target="_blank" class="btn btn-primary" style="background-color: var(--color-principal); border: none;">Ver más</a>
@@ -69,7 +69,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Fanvid</h5>
-                                <p class="card-text">Videos hechos y editados por fans, usando clips de series y películas, combinados con canciones y música.</p>
+                                <p class="card-text" style="text-align: justify;">Videos hechos y editados por fans, usando clips de series y películas, combinados con canciones y música.</p>
                             </div>
                             <div class="card-footer">
                                 <a href="fanvid.html" target="_blank" class="btn btn-primary" style="background-color: var(--color-principal); border: none;">Ver más</a>
@@ -78,7 +78,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Comunidades</h5>
-                                <p class="card-text">Grupos de trabajos que están basados en universos previamente creados.</p>
+                                <p class="card-text" style="text-align: justify;">Grupos de trabajos que están basados en universos previamente creados.</p>
                             </div>
                             <div class="card-footer">
                                 <a href="comunidades.html" target="_blank" class="btn btn-primary" style="background-color: var(--color-principal); border: none;">Ver más</a>
@@ -134,7 +134,7 @@
                     correoElectronico: document.getElementById("correoElectronico").value,
                     contrasenya: document.getElementById("contrasenya").value
                 };
-                const respuesta = await fetch ("/api/usuarios/registro", {
+                const respuesta = await fetch ("http://localhost:3000/Desktop/fanKINGdomP/html", {
                     method: "POST",
                     headers: { "Content-Type": "application/json"},
                     body: JSON.stringify(datos)
