@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const bcrypt = require("bcrypt");
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = mysql.createConnection({
     host: "localhost",
     user: "root", // Cambia esto si tienes otro usuario
-    password: "", // Añade tu contraseña si tienes una
+    password: "pipastijuana", // Añade tu contraseña si tienes una
     database: "fanKingdom"
 });
 

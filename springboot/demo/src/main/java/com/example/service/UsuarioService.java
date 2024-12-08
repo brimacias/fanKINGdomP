@@ -1,3 +1,10 @@
+package com.example.service;
+
+import com.example.demo.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.repository.UsuarioRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Service
 public class UsuarioService {
 

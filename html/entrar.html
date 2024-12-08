@@ -41,7 +41,7 @@
     </nav>
     <div class="container mt-4">
         <h2>Registro</h2>   
-        <form id="registroForm" action="http://localhost:3000/Desktop/fanKINGdomP/html" method="POST">
+        <form id="registroForm" action="/Users/brina/Desktop/fanKINGdomP/html" method="POST">
             <div class="form-group">
                 <label for="nombreUsuario">Nombre de Usuario</label>
                 <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required>
@@ -59,6 +59,42 @@
     </div>
     
     <script>
+        document.getElementById('registroForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const datos = {
+            nombreUsuario: document.getElementById("nombreUsuario").value.trim(),
+            correoElectronico: document.getElementById("correoElectronico").value.trim(),
+            contrasenya: document.getElementById("contrasenya").value.trim()
+        };
+
+        fetch('http://localhost:3000/Desktop/fanKINGdomP/html', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(datos),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    return response.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+                return response.text();
+            })
+            .then((data) => {
+                alert(data); // Mensaje de éxito
+            })
+            .catch((error) => {
+                console.error('Error al realizar el registro:', error.message);
+                alert(error.message); // Mostrar el error al usuario
+            });
+    });
+
+
+
+        /*
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("registroForm").addEventListener("submit", async (e) => {
                 e.preventDefault();
@@ -91,7 +127,7 @@
                     alert("Ocurrió un problema al registrarse.");
                 }
             });
-        });
+        });*/
     </script>
 </body>
 </html>

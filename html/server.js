@@ -32,7 +32,7 @@ conexion.connect((error) => {
 // Ruta para registrar un usuario
 app.post("/Desktop/fanKINGdomP/html", async (req, res) => {
     const { nombreUsuario, correoElectronico, contrasenya } = req.body;
-    const sql = 'INSERT INTO usuarios (nombre, email, contrasenya) VALUES (?, ?, ?)';
+    const sql = 'INSERT INTO usuarios (nombreUsuario, correoElectronico, contrasenya) VALUES (?, ?, ?)';
 
     conexion.query(sql, [nombreUsuario, correoElectronico, contrasenya], (error, resultados) => {
         if (error) {

@@ -1,3 +1,4 @@
+package com.example.demo;
 
 import jakarta.persistence.*;
 
@@ -21,7 +22,7 @@ public class Usuario {
         return usuarioId;
     }
 
-    public void setUsuarioId(Long usuarioId) {
+    public void setUsuarioId(int usuarioId) {
         this.usuarioId = usuarioId;
     }
 

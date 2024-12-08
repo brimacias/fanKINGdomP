@@ -4,23 +4,23 @@ use FANKINGDOM;
 
 -- Creación de tablas
 
+INSERT INTO usuarios (nombreUsuario, correoElectronico, contrasenya) VALUES ('kika', 'kika@gmail.com', 'fsdfghjkl');
+rollback;
+
+select * from usuarios;
 -- 0. Tabla usuarios
 create table if not exists usuarios (
 usuarioId int auto_increment primary key,
 nombreUsuario varchar(50) not null,
 correoElectronico varchar(100) not null,
 contrasenya varchar(255) not null,
-fechaCreacionPerfil datetime default current_timestamp,
+fechaCreacionPerfil datetime default current_timestamp(),
 fotoPerfil LONGBLOB,
 textoPresentacion text,
 fechaNacimiento date,
 lugarNacimiento varchar(50),
 lugarResidencia varchar(50),
-<<<<<<< HEAD
 rol enum('usuario','moderador','administrador') default 'usuario'
-=======
-rol enum('usuario','moderador','administrador') default 'usuario',
->>>>>>> 341d8434627abc89133459e41758feb58c2a48cb
 );
 
 create table if not exists moderadores (
@@ -48,11 +48,7 @@ foreign key (comunidadId) references Comunidades(comunidadId)
 );
 
 
-<<<<<<< HEAD
 create table if not exists publicaciones (
-=======
-create table publicaciones (
->>>>>>> 341d8434627abc89133459e41758feb58c2a48cb
     publicacionId int auto_increment primary key,
     titulo varchar(200) not null,
     contenido text not null,
