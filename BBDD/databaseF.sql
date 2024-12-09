@@ -67,7 +67,7 @@ create table if not exists publicaciones (
     foreign key (warning) references warning(warningId)
 );
 
--- select * from usuarios;
+select * from usuarios;
 -- drop table publicaciones;
 create table if not exists moderadores (
 comunidadId int auto_increment primary key,
